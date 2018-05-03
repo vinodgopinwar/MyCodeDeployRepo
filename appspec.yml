@@ -6,7 +6,7 @@ files:
 permissions:
    - object: /var/www/html
      pattern: "**"
-     owner: root
+     owner: ec2-user
      group: apache
      mode: 755
      type:
