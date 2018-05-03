@@ -1,9 +1,17 @@
 version: 0.0
-os: windows
+os: linux
 files:
-  - source: \index.html
-    destination: C:\inetpub\wwwroot
+   - source: /
+     destination: /var/www/html
+permissions:
+   - object: /var/www/html
+     pattern: "**"
+     owner: apache
+     group: apache
+     mode: 755
+     type:
+       - file
 hooks:
   BeforeInstall:
-    - location: \before-install.bat
+    - location: /before-install.bat
       timeout: 900
